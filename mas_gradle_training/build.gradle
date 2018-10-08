@@ -20,6 +20,8 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    compile 'com.shimmerresearch.pcdriver:ShimmerDriverPC:0.9.3beta'
+    compile name: 'ShimmerBiophysicalProcessingLibrary_Rev_0_11'
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -27,4 +29,10 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+      flatDir {
+       dirs 'libs'
+   }
+       maven {
+        url  "http://dl.bintray.com/shimmerengineering/Shimmer"
+    }
 }
