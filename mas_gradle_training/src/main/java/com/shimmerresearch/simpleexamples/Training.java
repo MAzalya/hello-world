@@ -17,7 +17,7 @@ import com.shimmerresearch.tools.bluetooth.BasicShimmerBluetoothManagerPc;
 
 public class Training {
 	private static JTextField txtComPort;
-	private static JTextField textField;
+	private static JTextField txtStatus;
 	static ShimmerPC shimmer = new ShimmerPC("ShimmerDevice"); 
 	static ShimmerDevice shimmerDevice;
 	static BasicShimmerBluetoothManagerPc btManager = new BasicShimmerBluetoothManagerPc();
@@ -50,7 +50,7 @@ public class Training {
 		btnConnect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				btComport = textField.getText();
+				btComport = txtStatus.getText();
 				btManager.connectShimmerThroughCommPort(btComport);
 				
 			}
@@ -72,9 +72,9 @@ public class Training {
 		JLabel lblNewLabel = new JLabel("Status");
 		downPanel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		downPanel.add(textField);
-		textField.setColumns(10);
+		txtStatus = new JTextField();
+		downPanel.add(txtStatus);
+		txtStatus.setColumns(10);
 		JButton btnStartStreaming = new JButton ("Start Streaming");
 		downPanel.add(btnStartStreaming);
 		btnStartStreaming.setSize(100, 100);
